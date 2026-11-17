@@ -320,6 +320,11 @@ svg{display:block}
 
 /* ---------- 캐릭터 이미지 ---------- */
 .fam-avatar img,.p-avatar img{width:100%;height:100%;object-fit:cover;object-position:50% 42%;display:block}
+img.av-hailey{background:radial-gradient(circle at 50% 38%,#FFFBEC 0%,#FFEED2 72%,#FDE6C4 100%)}
+img.av-hayden{background:radial-gradient(circle at 50% 40%,#FFFDF2 0%,#FFF3D6 78%)}
+.kid-hero-art img{background:none !important}
+img.av-dad{object-position:50% 30%}
+img.av-mom{object-position:50% 44%}
 .kid-hero-art img{width:100%;height:100%;object-fit:contain;display:block}
 .cell-art img{width:100%;height:auto;display:block;filter:drop-shadow(0 2px 4px rgba(150,120,70,.16))}
 .next-evo-art img{width:100%;height:100%;object-fit:contain;display:block}
@@ -950,7 +955,7 @@ var AVATAR = {
 
 function avatarArt(id) {
   var names = { hailey: 'Hailey 치이카와', hayden: 'Hayden 피카츄', dad: '아빠', mom: '엄마' };
-  return '<img src="' + (AVATAR[id] || AVATAR.mom) + '" alt="' + (names[id] || '') +
+  return '<img class="av-' + id + '" src="' + (AVATAR[id] || AVATAR.mom) + '" alt="' + (names[id] || '') +
     '" loading="lazy" decoding="async">';
 }
 
