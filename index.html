@@ -346,10 +346,12 @@ img.av-mom{object-position:50% 44%}
   box-shadow:0 2px 6px rgba(180,150,100,.18);display:grid;place-items:center;
 }
 .kid-switch .ks-av img{width:100%;height:100%;object-fit:cover;object-position:50% 42%}
-.kid-switch .ks-av.two{position:relative;width:34px;background:transparent;box-shadow:none}
-.kid-switch .ks-av.two img{position:absolute;width:21px;height:21px;border-radius:8px;border:1.5px solid #fff;box-shadow:0 1px 3px rgba(150,120,80,.2);object-fit:cover;top:3px}
-.kid-switch .ks-av.two img:first-child{left:0}
-.kid-switch .ks-av.two img:last-child{left:13px}
+.kid-switch .ks-av.two{
+  display:grid;grid-template-columns:1fr 1fr;width:30px;height:28px;border-radius:10px;overflow:hidden;
+  background:#fff;box-shadow:0 2px 6px rgba(180,150,100,.18);
+}
+.kid-switch .ks-av.two img{width:100%;height:100%;object-fit:cover;object-position:50% 26%;display:block}
+.kid-switch .ks-av.two img + img{border-left:1px solid #fff}
 .kid-switch .ks-txt{min-width:0;text-align:left;line-height:1.2}
 .kid-switch .ks-name{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:12px}
 .kid-switch .ks-meta{display:block;font-size:9.5px;font-weight:800;color:#B7A992;margin-top:1px}
@@ -1379,7 +1381,7 @@ function avatarArt(id) {
     var d = stats('dad'), m = stats('mom');
     html += '<button role="tab" aria-selected="' + (todayKid === 'parents' ? 'true' : 'false') + '" class="' + (todayKid === 'parents' ? 'active' : '') + '" data-act="kidTab" data-kid="parents">';
     html += '<span class="ks-av two">' + avatarArt('dad') + avatarArt('mom') + '</span>';
-    html += '<span class="ks-txt"><span class="ks-name">아뻐·엄마</span>';
+    html += '<span class="ks-txt"><span class="ks-name">아빠·엄마</span>';
     html += '<span class="ks-meta">' + (d.done + m.done) + '/' + (d.total + m.total) + ' · 오늘</span></span>';
     html += '</button>';
     html += '</div>';
